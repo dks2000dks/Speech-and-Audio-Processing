@@ -9,6 +9,7 @@ import os
 import scipy
 import keras
 import random
+import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Flatten
