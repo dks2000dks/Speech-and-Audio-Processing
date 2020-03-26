@@ -24,6 +24,14 @@ from tensorflow.keras.layers import concatenate,Activation
 print ("----------------------------Imported Libraries-------------------------")
 
 
+# The following lines should be added and batch_size during traing must be reduced if the following error occurs
+"""
+Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+"""
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
+
 def Read_MIDI(file):
 	""" Process of Reading a Music MIDI File """
 	# Returns Notes and Chords of a Music
